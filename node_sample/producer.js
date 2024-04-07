@@ -1,6 +1,6 @@
 import amqp from "amqplib"
 
-async function queueHandler() {
+async function producerHandler() {
     // Initiate connection to rabbitmq
     const connection = await amqp.connect({
         hostname: 'localhost',
@@ -50,4 +50,4 @@ async function publishMessage(channel, queue, msg) {
 }
 
 
-queueHandler()
+producerHandler()
