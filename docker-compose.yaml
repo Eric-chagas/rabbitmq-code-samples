@@ -1,0 +1,18 @@
+# RabbitMQ service docker-compose file for local development and debugging
+version: '3.8'
+
+services:
+  rabbitMQ:
+    # Setting up the container
+    image: rabbitmq:3.13-management
+    container_name: rabbitmq-local-server
+        
+    # Setting up ports
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    
+    # Setting up default credentials
+    environment:
+      - RABBITMQ_DEFAULT_USER=papercut
+      - RABBITMQ_DEFAULT_PASS=secret
